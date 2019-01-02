@@ -1,0 +1,121 @@
+@background-color: #F7F7F7;
+@font-size: 26rpx;
+@font-color: #707070;
+
+page {
+  background: @background-color;
+  font-size: @font-size;
+  color: @font-color;
+  vertical-align: middle;
+}
+
+.mod {
+  padding: 0 50rpx;
+  margin-bottom: 30rpx;
+  background: white;
+}
+
+.hd {
+  color: black;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  border-bottom: #eeeeee 1rpx solid;
+
+  .small {
+    font-size: 22rpx;
+    color: #bbb;
+  }
+}
+
+.sum {
+  color: red;
+  font-size: 40rpx;
+}
+
+.bd {
+  padding: 30rpx 0;
+}
+
+.ft {
+  line-height: 80rpx;
+}
+
+#productList-container {
+  .radio_top {
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .product_left {
+      line-height: 2.5;
+      display: block;
+    }
+  }
+}
+
+#reason-container {
+  .radio {
+    line-height: 2.5;
+    display: block;
+  }
+}
+
+#submit-btn {
+  margin: 0 30px;
+  background: #FD611C;
+  color: white;
+  &[disabled] {
+    background: #FB8241;
+    color: #FDCDB3;
+  }
+}
+
+.goods {
+  flex:516rpx;
+  background: #FFFFFF;
+  position: relative;
+  display: inline-block;
+  .goodssum_left {
+    width: 164rpx;
+    height: 164rpx;
+    margin: 24rpx 42rpx 26rpx 52rpx;
+  }
+  .rightcontainer {
+    .title {
+      position: absolute;
+      top: 20rpx;
+      left: 258rpx;
+      font-size: 28rpx;
+      color: #413130;
+      letter-spacing: 0;
+      line-height: 34rpx;
+    }
+    .protocal {
+      position: absolute;
+      top: 90rpx;
+      left: 258rpx;
+      font-size: 26rpx;
+      color: #A28A85;
+      letter-spacing: 0;
+      line-height: 24rpx;
+    }
+    .money {
+      position: absolute;
+      top: 140rpx;
+      left: 258rpx;
+      font-size: 40rpx;
+      color: #FF4949;
+      letter-spacing: 0;
+      line-height: 40rpx;
+    }
+    .count {
+      position: absolute;
+      top: 150rpx;
+      left: 564rpx;
+      font-size: 24rpx;
+      color: #461212;
+      letter-spacing: 0;
+      line-height: 24rpx;
+    }
+  }
+}

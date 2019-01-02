@@ -1,0 +1,74 @@
+<template name="orderlist">
+  <view wx:if="{{!showBlankPage}}">
+    <view wx:for="{{orderList}}" wx:for-index="index" wx:key="{{item.orderNo}}" wx:for-item="item" class="all_one_order">
+      <view data-orderno="{{item.orderNo}}" data-isorder="{{item.isOrder}}" bindtap="jumpToDetail">
+        <view class="storesum">
+          <view class="storesum_left">订单编号：{{item.orderNo}}
+          </view>
+          <view class="storesum_right" wx:if="{{item.orderStatus == 'TRADE_CANCEL'}}">交易取消</view>
+          <view class="storesum_right" wx:elif="{{item.orderStatus == 'INITIAL'}}">待付款</view>
+          <view class="storesum_right" wx:elif="{{item.orderStatus == 'PAY_SUCCESS'}}">待提货</view>
+          <view class="storesum_right" wx:elif="{{item.orderStatus == 'TRADE_SUCCESS'||item.orderStatus == 'TRADE_FINISHED'}}">交易完成</view>
+          <view class="storesum_right" wx:elif="{{item.orderStatus == 'SUCCESS'}}">退款成功</view>
+          <view class="storesum_right" wx:elif="{{item.orderStatus == 'FAIL'}}">退款失败</view>
+          <view class="storesum_right" wx:elif="{{item.orderStatus == 'PROCESSING'}}">退款中</view>
+        </view>
+        <view class="goodssum">
+          <view>
+            <view wx:if="{{item.isFold}}">
+              <view wx:for="{{item.productList}}" wx:for-index="index" wx:key="index" wx:for-item="product" class="goods">
+                <image class="goodssum_left" src="https://timg.ffan.com/convert/resize/url_T1rQhgB4hT1RCvBVdK/tfs/{{product.picture}}"></image>
+                <view class="rightcontainer">
+                  <view class="title">{{product.title}}</view>
+                  <view class="protocal">{{product.productInfoObj.skuAlias}}</view>
+                  <view  class="money"><label  class="inner-money">¥</label><label>{{product.productPrice}}</label></view>
+                  <view class="count">×{{product.productCount}}</view>
+                </view>
+              </view>
+              <view wx-if="{{item.originProductList.length>2}}" catchtap="flodFn" data-idx="{{index}}" class="fold_tip">还有{{item.productTotalCount-2}}件商品
+                <image src="../../assets/images/down_arrow.png" class="arrow"></image>
+              </view>
+            </view>
+            <view wx:else>
+              <view wx:for="{{item.originProductList}}" wx:for-index="indexpro" wx:key="indexpro" wx:for-item="product" class="goods">
+                <image class="goodssum_left" src="https://timg.ffan.com/convert/resize/url_T1rQhgB4hT1RCvBVdK/tfs/{{product.picture}}"></image>
+                <view class="rightcontainer">
+                  <view class="title">{{product.title}}</view>
+                  <view class="protocal">{{product.productInfoObj.skuAlias}}</view>
+                  <view  class="money"><label  class="inner-money">¥</label><label>{{product.productPrice}}</label></view>
+                  <view class="count">×{{product.productCount}}</view>
+                </view>
+              </view>
+              <view wx-if="{{item.originProductList.length>2}}" catchtap="flodFn" data-idx="{{index}}" class="fold_tip">收起展开商品
+                <image src="../../assets/images/up_arrow.png" class="arrow"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="ordersum">
+          <label class="number">共计
+            <label class="inner_number">{{item.productTotalCount}}</label>件</label>
+          <label class="money">小计：￥
+            <label class="inner_money">{{item.realPayAmt}}</label>
+          </label>
+        </view>
+        <view class="orderstatus" wx:if="{{item.orderStatus == 'SUCCESS'||item.orderStatus == 'FAIL'||item.orderStatus == 'PROCESSING'}}">
+          <view class="type">
+            <text wx:if="{{item.orderStatus == 'SUCCESS'}}">退款详情</text>
+            <text wx:elif="{{item.orderStatus == 'FAIL'}}">退款详情</text>
+            <text wx:elif="{{item.orderStatus == 'PROCESSING'}}">退款详情</text>
+          </view>
+          <!-- <view wx:elif="{{item.orderStatus == 'PAY_SUCCESS'}}" class="type">
+            <text>查看核销码</text>
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="blank_page">
+    <image src="../../assets/images/blank_page.png"></image>
+    <view class="blank_tip">您暂时还没有订单哦</view>
+    <view class="blank_tip_small">再不疯狂的去扫货，就老了...</view>
+    <button bindtap="toScan">去核销</button>
+  </view>
+</template>

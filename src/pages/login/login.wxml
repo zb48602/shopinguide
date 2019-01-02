@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="flex-item">
+    <view class="title_section">
+      <image src="../../assets/images/logo.png"></image>
+    </view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="section view-phone">
+        <image src="../../assets/images/phone_input.png" class="phone_image"></image>
+        <input type="number" placeholder="请输入手机号" value="{{mobile}}" maxlength="11" bindinput="bindPhoneInput" name="mobile" class="input-phone" />
+        <image wx-if="{{mobile}}" src="../../assets/images/deleteLogin.png" class="deleteLogin" bindtap="deletePhone"></image>
+      </view>
+      <view class="section verify_line">
+        <image src="../../assets/images/verify_input.png" class="code_image"></image>
+        <input type="password" placeholder="请输入密码" bindinput="bindCodeInput" value="{{password}}" name="password" />
+        <image wx-if="{{password}}" src="../../assets/images/deleteLogin.png" class="deleteLogin" bindtap="deleteCode"></image>
+      </view>
+      <p class="error">{{error}}</p>
+      <view class="btn-area">
+        <button formType="submit" class="login_btn {{submitStatus?'active':''}}" disabled="{{!submitStatus}}">登录</button>
+      </view>
+    </form>
+  </view>
+</view>

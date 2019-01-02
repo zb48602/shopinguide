@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="top_container">
+    <view class="top_account">
+      <text>欢迎您，{{name}}，你的导购号是{{memberId}}</text>
+      <view class="change_account" bindtap="changeCount">切换账号</view>
+    </view>
+    <view class="top_guide">
+      <view class="top_guide_all scancode" bindtap="toScan">
+        <image src="../../assets/images/scancode.png"></image>
+        <view class="scancode_des">订单核销</view>
+      </view>
+      <view class="top_guide_all searchorder" bindtap="toSearchOrder">
+        <image src="../../assets/images/searchorder.png"></image>
+        <view class="scancode_des">订单查询</view>
+      </view>
+    </view>
+  </view>
+  <view class="menu">
+    <ul>
+      <li class="menutab {{active ==1 ? 'active' : null }}" data-type="1" bindtap="changeType">全部</li>
+      <li class="menutab {{active ==3 ? 'active' : null }}" data-type="3" bindtap="changeType">待核销</li>
+      <li class="menutab {{active ==4 ? 'active' : null }}" data-type="4" bindtap="changeType">已完成</li>
+      <li class="menutab {{active ==5 ? 'active' : null }}" data-type="5" bindtap="changeType">退款</li>
+    </ul>
+  </view>
+  <import src="/components/orderlist/orderlist.wxml" />
+  <template is="orderlist" data="{{orderList,showBlankPage}}" />
+</view>

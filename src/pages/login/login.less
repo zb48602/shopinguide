@@ -1,0 +1,155 @@
+/**index.wxss**/
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.flex-wrp {
+  width: 80%;
+  margin-bottom: 70px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-item {
+  position: relative;
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+//.flex-item button {
+//  margin-right: 7px;
+//}
+
+.title {
+  margin-top: 30px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.title_section {
+  height: 280rpx;
+  width: 100%;
+  background: #FC6B1E;
+  text-align: center;
+  image {
+    width: 107px;
+    height: 107px;
+  }
+}
+
+.section {
+  border-bottom: 1px solid gray;
+}
+
+.view-phone {
+  width: 90vmin;
+  margin: 30rpx auto 0;
+  padding: 3vmin 0;
+  border-bottom: 1px solid #dfdfdf;
+  overflow: hidden;
+  clear: both;
+
+  .phone_image {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-left: 20rpx;
+    margin-top: 10rpx;
+  }
+  input {
+    font-size: 4vmin;
+    margin-left: 1vmin;
+    float: left;
+    color: #000;
+  }
+  .deleteLogin {
+    width: 40rpx;
+    height: 40rpx;
+    display: inline-block;
+    float: right;
+    margin-right: 20rpx;
+    margin-top: 10rpx;
+  }
+}
+
+.verify_line {
+  width: 90vmin;
+  margin: 30rpx auto 0;
+  padding: 3vmin 0;
+  border-bottom: 1px solid #dfdfdf;
+  overflow: hidden;
+  clear: both;
+  .code_image {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-left: 20rpx;
+    margin-top: 10rpx;
+  }
+  input {
+    font-size: 4vmin;
+    margin-left: 1vmin;
+    float: left;
+    color: #000;
+  }
+  .deleteLogin {
+    width: 40rpx;
+    height: 40rpx;
+    display: inline-block;
+    float: right;
+    margin-right: 20rpx;
+    margin-top: 10rpx;
+  }
+  .btn-check-code {
+    padding: 0 0.7em;
+    border: 1px solid cornflowerblue;
+    color: cornflowerblue !important;
+    width: 90px;
+    line-height: 60rpx;
+    height: 60rpx;
+    float: right;
+  }
+  .btn-check-code-disable {
+    padding: 0 0.7em;
+    border: 1px solid gray;
+    color: gray !important;
+    width: 90px;
+    line-height: 60rpx;
+    height: 60rpx;
+    float: right;
+  }
+}
+
+
+.view-phone .btn-check-code::after {
+  border: none;
+}
+
+.btn-area {
+  .login_btn {
+    margin-top: 40px;
+    width: 90%;
+    height: 48px;
+    background-color: #FC6B1E !important;
+    color: #ffffff !important;
+    opacity: 0.4;
+  }
+  .active {
+    opacity: 1;
+  }
+}
+
+.error {
+  color: #FF4949;
+  font-size: 3.2vmin;
+  margin-top: 2vmin;
+  margin-left:13vmin;
+}

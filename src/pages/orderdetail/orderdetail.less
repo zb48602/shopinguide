@@ -1,0 +1,333 @@
+@link-color : #F7F7F7;
+
+.container {
+  background: @link-color;
+  height: 1280rpx;
+  .orderdes {}
+}
+
+.allorderstatus {
+  .orderstatus,
+  .order_pickup {
+    width: 100%;
+    height: 120rpx;
+    background: #FD611C;
+    .status {
+      font-size: 28rpx;
+      color: #FFFFFF;
+      line-height: 28rpx;
+      padding: 24rpx 0rpx 0rpx 30rpx;
+    }
+    .status_big {
+      font-size: 28rpx;
+      color: #FFFFFF;
+      line-height: 80rpx;
+      padding: 24rpx 0rpx 0rpx 30rpx;
+    }
+    .statusdes {
+      font-size: 24rpx;
+      color: #FFFFFF;
+      line-height: 28rpx;
+      padding: 24rpx 0rpx 0rpx 30rpx;
+    }
+    image {
+      width: 24.6rpx;
+      height: 24.6rpx;
+      float: left;
+    }
+    .image_middle {
+      margin: 54rpx 16rpx 0rpx 32rpx;
+    }
+    .image_top {
+      margin: 30rpx 16px 0rpx 32rpx;
+    }
+  }
+}
+
+.qcodezone {
+  width: 100%;
+  height: 444rpx;
+  background: #FFFFFF;
+  text-align: center;
+  position: relative;
+  .qcode {
+    width: 264rpx;
+    height: 264rpx;
+    margin-top: 36rpx;
+  }
+  .code_des {
+    font-size: 24rpx;
+    color: #FF5151;
+    margin-top: 14rpx;
+  }
+  .used_img {
+    position: absolute;
+    top: 110rpx;
+    left: 448rpx;
+    width: 224rpx;
+    height: 224rpx;
+  }
+  .code {
+    border: 2rpx solid #E3DADA;
+    border-radius: 10rpx;
+    width: 520rpx;
+    height: 80rpx;
+    margin: 0 auto;
+    line-height: 80rpx;
+
+    .code_tip {
+      font-size: 36rpx;
+      color: #413130;
+      .code_num {
+        font-size: 36rpx;
+        color: #413130;
+        font-weight: bold;
+      }
+      .code_num_line {
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
+.order_sum {
+  height: 88rpx;
+  padding-left: 282rpx;
+  border-top: 2rpx solid #EFEFEF;
+  border-bottom: 2rpx solid #EFEFEF;
+  line-height: 88rpx;
+  background: #ffffff;
+  .order_number {
+    font-size: 24rpx;
+    color: #461212;
+    line-height: 24rpx;
+    .inner_number {
+      font-size: 28rpx;
+      color: #FF4949;
+      margin-left:10rpx;
+      margin-right:8rpx;
+    }
+  }
+  .order_money {
+    font-size: 24rpx;
+    color: #461212;
+    float: right;
+    margin-right: 40rpx;
+    .inner_money {
+      margin-left:10rpx;
+      font-size: 40rpx;
+      color: #FF4949;
+    }
+  }
+}
+
+.goods {
+  width: 100%;
+  background: #FFFFFF;
+  position: relative;
+  .goodssum_left {
+    width: 164rpx;
+    height: 164rpx;
+    margin: 24rpx 42rpx 26rpx 52rpx;
+  }
+  .rightcontainer {
+    .title {
+      position: absolute;
+      top: 30rpx;
+      left: 258rpx;
+      font-size: 28rpx;
+      color: #413130;
+      letter-spacing: 0;
+      line-height: 34rpx;
+    }
+    .protocal {
+      position: absolute;
+      top: 100rpx;
+      left: 258rpx;
+      font-size: 26rpx;
+      color: #A28A85;
+      line-height: 24rpx;
+    }
+    .money {
+      position: absolute;
+      top: 160rpx;
+      left: 258rpx;
+      font-size: 40rpx;
+      color: #FF4949;
+      letter-spacing: 0;
+      line-height: 40rpx;
+      .inner-money {
+        font-size: 24rpx;
+        color: #461212;
+        line-height: 24rpx;
+        margin-right:4rpx;
+      }
+    }
+    .count {
+      position: absolute;
+      top: 170rpx;
+      left: 684rpx;
+      font-size: 24rpx;
+      color: #461212;
+      letter-spacing: 0;
+      line-height: 24rpx;
+    }
+  }
+}
+
+.storesum {
+  width: 100%;
+  padding:20rpx 0rpx 22rpx 30rpx;
+  background: #ffffff;
+  .storesum_left {
+    width: 520rpx;
+    font-size: 32rpx;
+    color: #413130;
+    line-height: 32rpx;
+  }
+  .storesum_center {
+    background: #289BFF;
+    border: 2rpx solid #289BFF;
+    border-radius: 48rpx;
+    color: #FFFFFF;
+  }
+}
+
+
+.product {
+  position: relative;
+  .picture {
+    width: 164rpx;
+    height: 164rpx;
+  }
+  .productdes {
+    position: absolute;
+    top: 0rpx;
+    left: 200rpx;
+    font-size: 24rpx;
+    color: #000000;
+  }
+  .productsize {
+    position: absolute;
+    top: 120rpx;
+    left: 200rpx;
+    font-size: 26rpx;
+    color: #A28A85;
+    letter-spacing: 0;
+    line-height: 24rpx;
+  }
+}
+
+
+.order_other_container {
+  font-size: 28rpx;
+  color: #413130;
+  line-height: 28rpx;
+  background: #ffffff;
+  padding-left: 32rpx;
+  margin-top: 16rpx;
+  .order_other {
+    font-size: 28rpx;
+    color: #413130;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-bottom: 2rpx solid #E5E9F2;
+  }
+  .innner_order_other {
+    font-size: 28rpx;
+    color: #A28A85;
+    margin-left: 20rpx;
+  }
+}
+
+.orderaction {
+  width: 100%;
+  position: fixed;
+  bottom: 0rpx;
+  padding: 16rpx;
+  display: flex;
+  border-top: 2rpx solid #E5E9F2;
+  background: #ffffff;
+  .btn-item {
+    width: 320rpx;
+    height: 94rpx;
+    border-radius: 10rpx;
+    overflow: visible;
+  }
+  .btn-item-left {
+    font-size: 36rpx;
+    border: 1px solid #289BFF;
+    color: #289BFF;
+  }
+  .btn-item-right { 
+    font-size: 36rpx;
+  }
+  .btn-color-light{
+    background: #FD611C;
+    color: #FFFFFF;
+  }
+  .btn-color{
+    background: #FB8241;
+    color: #FDCDB3;
+  }
+}
+
+.footer {
+  font-size: 24rpx;
+  color: #A28A85;
+  margin-top: 18rpx;
+  text-align: center;
+}
+
+.refund_container {
+  height: 354rpx;
+  .refund_top {
+    border-bottom: 2rpx solid #EFEFEF;
+    height: 88rpx;
+    line-height: 88rpx;
+    .refund_tip {
+      font-size: 28rpx;
+      color: #413130;
+      float: left;
+      line-height: 88rpx;
+      margin-left: 30rpx;
+      width: 520rpx;
+    }
+    .refund_money {
+      font-size: 40rpx;
+      color: #FF4949;
+      line-height: 88rpx;
+      float: right;
+      margin-right: 30rpx;
+    }
+  }
+  .refund_body {
+    .refund_process {
+      font-size: 24rpx;
+      color: #A28A85;
+      line-height: 24rpx;
+      margin: 46rpx 0rpx 0rpx 58rpx;
+    }
+    image {
+      width:448rpx;
+      height:70rpx;
+    }
+    .refund_image {
+      margin-top: 40rpx;
+      text-align: center;
+    }
+    .refund_time {
+      font-size: 22rpx;
+      color: #A28A85;
+      line-height: 24rpx;
+      .refund_time_left {
+        float: left;
+        margin-left: 100rpx;
+      }
+      .refund_time_right {
+        float: right;
+        margin-right: 100rpx;
+      }
+    }
+  }
+}

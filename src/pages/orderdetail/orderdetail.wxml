@@ -1,0 +1,108 @@
+<view class="container">
+  <view class="allorderstatus">
+    <view class="order_pickup" wx:if="{{orderDetail.orderStatus=='INITIAL'}}">
+      <image src="../../assets/images/shape.png" class="image_top"></image>
+      <view class="status">等待付款</view>
+      <view class="statusdes">请在29分59秒内付款，超时订单将自动关闭</view>
+    </view>
+    <view class="order_pickup" wx:elif="{{orderDetail.orderStatus=='PAY_SUCCESS'}}">
+      <image src="../../assets/images/shape.png" class="image_middle"></image>
+      <view class="status_big">待核销</view>
+    </view>
+    <view class="order_pickup" wx:elif="{{orderDetail.orderStatus=='TRADE_SUCCESS'}}">
+      <image src="../../assets/images/right.png" class="image_top"></image>
+      <view class="status">交易完成</view>
+      <view class="statusdes">交易已完成，期待你的再次光临！</view>
+    </view>
+    <view class="order_pickup" wx:elif="{{orderDetail.orderStatus=='TRADE_FINISHED'}}">
+      <image src="../../assets/images/right.png" class="image_top"></image>
+      <view class="status">交易完成</view>
+      <view class="statusdes">如果您需要退货，请于提货完7日内联系店内导购，超期无法退货</view>
+    </view>
+    <view class="order_pickup" wx:elif="{{orderDetail.orderStatus=='TRADE_CANCEL'}}">
+      <image src="../../assets/images/close.png" class="image_middle"></image>
+      <view class="status_big">订单已取消</view>
+    </view>
+    <view class="order_pickup" wx:elif="{{orderDetail.orderStatus=='SUCCESS'}}">
+      <image src="../../assets/images/right.png" class="image_top"></image>
+      <view class="status">退款成功</view>
+      <view class="statusdes">已成功退回顾客的原支付账户</view>
+    </view>
+    <view class="order_pickup" wx:elif="{{orderDetail.orderStatus=='FAIL'}}">
+      <image src="../../assets/images/close.png" class="image_top"></image>
+      <view class="status">退款失败</view>
+      <view class="statusdes">暂未收到顾客购买的商品</view>
+    </view>
+    <view class="order_pickup" wx:elif="{{orderDetail.orderStatus=='PROCESSING'}}">
+      <image src="../../assets/images/shape.png" class="image_top"></image>
+      <view class="status">退款中</view>
+      <view class="statusdes">退款预计7-15个工作日退回顾客的原支付账户</view>
+    </view>
+    <!-- <view class="qcodezone" wx:if="{{orderDetail.orderStatus=='PAY_SUCCESS'||orderDetail.orderStatus=='TRADE_SUCCESS'||orderDetail.orderStatus=='TRADE_FINISHED'||orderDetail.orderStatus=='TRADE_FEFUND'}}">
+      <image class="qcode" src="http://api.sit.ffan.com/shopin/v1/pickup/QRCode?url={{signDetail.sign}}"></image>
+      <view class="code">
+        <text class="code_tip">提货码:<text class="{{(orderDetail.orderStatus=='TRADE_SUCCESS'||orderDetail.orderStatus=='TRADE_FINISHED'||orderDetail.orderStatus=='TRADE_FEFUND')?'code_num code_num_line':'code_num'}}">{{signDetail.sign}}</text></text>
+      </view>
+      <image class="used_img" src="../../assets/images/used.png" wx:if="{{orderDetail.orderStatus=='TRADE_SUCCESS'||orderDetail.orderStatus=='TRADE_FINISHED'}}"></image>
+      <image class="used_img" src="../../assets/images/refund.png" wx:elif="{{orderDetail.orderStatus=='TRADE_REFUND'}}"></image>
+      <view wx:if="{{orderDetail.orderStatus=='PAY_SUCCESS'}}" class="code_des">离店时请向导购员出示此二维码</view>
+    </view> -->
+    <view class="refund_container" wx-if="{{orderDetail.orderStatus=='SUCCESS'||orderDetail.orderStatus=='FAIL'||orderDetail.orderStatus=='PROCESSING'}}">
+    <view class="refund_top">
+      <label class="refund_tip">退款总金额</label>
+      <label class="refund_money">￥{{orderDetail.realPayAmt}}</label>
+    </view>
+    <view class="refund_body">
+      <p class="refund_process">申请进度</p>
+      <view class="refund_image">
+      <image src="../../assets/images/success.png" wx-if="{{orderDetail.orderStatus=='SUCCESS'}}"></image>
+      <image src="../../assets/images/fail.png" wx-if="{{orderDetail.orderStatus=='FAIL'}}"></image>
+      <image src="../../assets/images/process.png" wx-if="{{orderDetail.orderStatus=='PROCESSING'}}"></image>
+    </view>
+      <view class="refund_time">
+        <label class="refund_time_left">{{orderDetail.orderCreateTime}}</label>
+        <label class="refund_time_right">{{orderDetail.payTime}}</label></view>
+    </view>
+     </view>
+  </view>
+  <view class="orderdes">
+    <view class="storesum">
+      <view class="storesum_left">商品信息
+      </view>
+    </view>
+    <view class="goodssum">
+      <view wx:for="{{orderDetail.productList}}" wx:for-index="index" wx:key="index" wx:for-item="product" class="goods">
+        <image class="goodssum_left" src="https://timg.ffan.com/convert/resize/url_T1rQhgB4hT1RCvBVdK/tfs/{{product.picture}}"></image>
+        <view class="rightcontainer">
+          <view class="title">{{product.title}}</view>
+          <view class="protocal">{{product.productInfoObj.skuAlias}}</view>
+          <view  class="money"><label  class="inner-money">¥</label><label>{{product.productPrice}}</label></view>
+          <view class="count">×{{product.productCount}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="order_sum">
+      <text class="order_number">共计<text class="inner_number">{{orderDetail.productTotalCount}}</text>件</text>
+      <text class="order_money">小计：￥<text class="inner_money">{{orderDetail.realPayAmt}}</text>
+      </text>
+    </view>
+    <view class="order_other_container" wx-if="{{orderDetail.orderStatus=='INITIAL'||orderDetail.orderStatus=='PAY_SUCCESS'||orderDetail.orderStatus=='TRADE_SUCCESS'||orderDetail.orderStatus=='TRADE_FINISHED'||orderDetail.orderStatus=='TRADE_CANCEL'}}">
+      <view class="order_other">顾客手机号码<text class="innner_order_other">{{orderDetail.phoneNo}}</text></view>
+      <view class="order_other">导购员ID<text class="innner_order_other">{{orderDetail.memberId}}</text></view>
+    </view>
+    <view class="order_other_container" wx-if="{{orderDetail.orderStatus=='INITIAL'||orderDetail.orderStatus=='PAY_SUCCESS'||orderDetail.orderStatus=='TRADE_SUCCESS'||orderDetail.orderStatus=='TRADE_FINISHED'||orderDetail.orderStatus=='TRADE_CANCEL'}}">
+      <view class="order_other">订单编号<text class="innner_order_other">{{orderDetail.orderNo}}</text></view>
+      <view class="order_other" wx:if="{{orderDetail.orderStatus=='TRADE_SUCCESS'||orderDetail.orderStatus=='TRADE_FINISHED'}}">提货时间<text class="innner_order_other">{{orderDetail.payTime}}</text></view>
+      <view class="order_other">下单时间<text class="innner_order_other">{{orderDetail.orderCreateTime}}</text></view>
+    </view>
+    <view class="order_other_container" wx-if="{{orderDetail.orderStatus=='SUCCESS'||orderDetail.orderStatus=='FAIL'||orderDetail.orderStatus=='PROCESSING'}}">
+      <view class="order_other">申请时间<text class="innner_order_other">{{orderDetail.orderCreateTime}}</text></view>
+      <view class="order_other">退单编号<text class="innner_order_other">{{orderDetail.orderNo}}</text></view>
+    </view>
+  </view>
+  <view class="orderaction" wx:if="{{orderDetail.orderStatus=='PAY_SUCCESS'||orderDetail.orderStatus=='TRADE_SUCCESS'||orderDetail.orderStatus=='TRADE_FINISHED'}}">
+    <button class="btn-item btn-item-left" data-orderno="{{orderDetail.orderNo}}" bindtap="refundOrder" wx:if="{{orderDetail.orderStatus=='TRADE_SUCCESS'}}">退货</button>
+    <button class="btn-item btn-item-right btn-color-light"  bindtap="pickupOrder" wx:if="{{orderDetail.orderStatus=='PAY_SUCCESS'}}">去核销</button>
+    <button class="btn-item btn-item-right btn-color" wx:if="{{orderDetail.orderStatus=='TRADE_SUCCESS'||orderDetail.orderStatus=='TRADE_FINISHED'}}">已核销</button>
+  </view>
+</view>

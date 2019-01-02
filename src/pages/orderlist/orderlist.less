@@ -1,0 +1,255 @@
+@link-color : #F7F7F7;
+
+.container {
+  background: @link-color;
+  position: relative;
+}
+
+.menutab {
+  margin: 34rpx 60rpx 34rpx 60rpx;
+  opacity: 0.9;
+  font-size: 28rpx;
+  color: #413130;
+  letter-spacing: 0;
+  line-height: 96rpx;
+}
+
+.menu {
+  height: 96rpx;
+  background: #FFFFFF;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  z-index: 100;
+  .active {
+    color: #FD611C;
+    border-bottom: 4rpx solid #fd5d68;
+    border-radius: 4rpx;
+    padding-bottom: 24rpx;
+  }
+}
+
+.storesum {
+  width: 100%;
+  background: #FFFFFF;
+  padding: 18rpx 0 24rpx 30rpx;
+  .storesum_left {
+    float: left;
+    width: 520rpx;
+    font-size: 32rpx;
+    color: #413130;
+    letter-spacing: 0;
+    line-height: 32rpx;
+  }
+  .storesum_right {
+    font-size: 28rpx;
+    color: #FF4949;
+    letter-spacing: 0;
+    line-height: 32rpx;
+    margin-left: 580rpx;
+  }
+  .storesum_center {
+    background: #289BFF;
+    border: 1px solid #289BFF;
+    border-radius: 48rpx;
+    font-size: 20rpx;
+    color: #FFFFFF;
+  }
+}
+
+.fold_tip {
+  font-size: 22rpx;
+  color: #A28A85;
+  line-height: 28rpx;
+  text-align: center;
+  margin-top: 22rpx;
+  margin-bottom: 22rpx;
+
+  .arrow {
+    width: 18rpx;
+    height: 10rpx;
+  }
+}
+
+.goods {
+  width: 100%;
+  background: #FFFFFF;
+  position: relative;
+  .goodssum_left {
+    width: 164rpx;
+    height: 164rpx;
+    margin: 24rpx 42rpx 26rpx 52rpx;
+  }
+  .rightcontainer {
+    .title {
+      position: absolute;
+      top: 20rpx;
+      left: 258rpx;
+      font-size: 28rpx;
+      color: #413130;
+      letter-spacing: 0;
+      line-height: 34rpx;
+    }
+    .protocal {
+      position: absolute;
+      top: 90rpx;
+      left: 258rpx;
+      font-size: 26rpx;
+      color: #A28A85;
+      letter-spacing: 0;
+      line-height: 24rpx;
+    }
+    .money {
+      position: absolute;
+      top: 140rpx;
+      left: 258rpx;
+      font-size: 40rpx;
+      color: #FF4949;
+      letter-spacing: 0;
+      line-height: 40rpx;
+      .inner-money {
+        font-size: 24rpx;
+        color: #461212;
+        line-height: 24rpx;
+        margin-left:4rpx;
+      }
+    }
+    .count {
+      position: absolute;
+      top: 150rpx;
+      left: 684rpx;
+      font-size: 24rpx;
+      color: #461212;
+      letter-spacing: 0;
+      line-height: 24rpx;
+    }
+  }
+}
+
+.ordersum {
+  height: 88rpx;
+  background: #FFFFFF;
+  padding-left: 282rpx;
+  border-top: 2rpx solid #EFEFEF;
+  border-bottom: 2rpx solid #EFEFEF;
+  line-height: 88rpx;
+
+  .number {
+    font-size: 24rpx;
+    color: #461212;
+    letter-spacing: 0;
+    line-height: 24rpx;
+    .inner_number {
+      font-size: 28rpx;
+      color: #FF4949;
+      margin-left: 10rpx;
+      margin-right: 8rpx;
+    }
+  }
+  .money {
+    font-size: 24rpx;
+    color: #461212;
+    float: right;
+    margin-right: 40rpx;
+    .inner_money {
+      margin-left: 10rpx;
+      font-size: 40rpx;
+      color: #FF4949;
+    }
+  }
+}
+
+.all_one_order {
+  background: #FFFFFF;
+  margin-bottom: 16rpx;
+}
+
+.orderstatus {
+  height: 88rpx;
+  background: #FFFFFF;
+  .type {
+    /*margin-right: 14rpx 30rpx 14rpx 570rpx;*/
+    border: 2rpx solid #FD611C;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    color: #FD611C;
+    height: 60rpx;
+    width: 180rpx;
+    text-align: center;
+    line-height: 60rpx;
+    float: right;
+    margin: 12rpx 30rpx 16rpx;
+  }
+}
+
+.blank_page {
+  text-align: center;
+  height: 1280rpx;
+  image {
+    width: 384rpx;
+    height: 384rpx;
+    margin-top: 72rpx;
+  }
+  .blank_tip {
+    font-size: 36rpx;
+    color: #3E2E2D;
+    mrgin-top: 10rpx;
+  }
+  .blank_tip_small {
+    font-size: 24rpx;
+    color: #A68F8A;
+    margin-top: 20rpx;
+  }
+  button {
+    width: 204rpx;
+    height: 96rpx;
+    font-size: 36rpx;
+    color: #FFFFFF;
+    background: #FD611C;
+    margin-top: 56rpx;
+  }
+}
+
+.top_container {
+  position: relative;
+  .top_account {
+    text-align: center;
+    padding: 28rpx 12rpx 28rpx 12rpx;
+    text {
+      font-size: 22rpx;
+      color: #413130;
+      line-height: 34rpx;
+      display: inline-block;
+    }
+    .change_account {
+      display: inline-block;
+      border: 2rpx solid #289BFF;
+      border-radius: 3px;
+      font-size: 22rpx;
+      color: #289BFF;
+      width: 105rpx;
+      height: 32rpx;
+      line-height: 32rpx;
+    }
+  }
+  .top_guide {
+    position: relative;
+    .top_guide_all {
+      display: inline-block;
+      image {
+        width: 108rpx;
+        height: 108rpx;
+      }
+      .scancode_des {
+        font-size: 30rpx;
+        color: #3E2E2D;
+      }
+    }
+    .scancode {
+      margin: 38rpx 96rpx 38rpx 156rpx;
+    }
+    .searchorder {
+      margin: 38rpx 160rpx 38rpx 96rpx;
+    }
+  }
+}

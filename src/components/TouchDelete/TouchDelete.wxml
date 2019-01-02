@@ -1,0 +1,6 @@
+<view class="touch-delete">
+  <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{txtStyle}}" class="touch-delete-content">
+    <slot></slot>
+  </view>
+  <view bindtap="delItem" style="width: {{buttonStyle.width / 2}}px;height: {{buttonStyle.height}}px" class="touch-delete-button">删除</view>
+</view>

@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="section">
+    <icon type="search" size="24" bindtap="searchOrder" />
+    <input type="search" value="{{searchValue}}" bindinput="bindKeyInput"  bindconfirm="bindConfirm" placeholder="请输入13位订单号/订单信息" class="{{searchValue==''?'input_nodata':'input_data'}}"/>
+  </view>
+  <view class="all_one_order" wx-if="{{orderDetail.orderNo}}">
+    <view class="storesum">
+      <view class="storesum_left">订单编号：{{orderDetail.orderNo}}
+      </view>
+      <view class="storesum_right" wx:if="{{orderDetail.orderStatus == 'TRADE_CANCEL'}}">交易取消</view>
+      <view class="storesum_right" wx:elif="{{orderDetail.orderStatus == 'INITIAL'}}">待付款</view>
+      <view class="storesum_right" wx:elif="{{orderDetail.orderStatus == 'PAY_SUCCESS'}}">待提货</view>
+      <view class="storesum_right" wx:elif="{{orderDetail.orderStatus == 'TRADE_SUCCESS'||orderDetail.orderStatus == 'TRADE_FINISHED'}}">交易完成</view>
+    </view>
+    <view class="goodssum">
+      <view wx:for="{{orderDetail.productList}}" wx:for-index="index" wx:key="index" wx:for-item="product"class="goods">
+        <image class="goodssum_left" src="https://timg.ffan.com/convert/resize/url_T1rQhgB4hT1RCvBVdK/tfs/{{product.picture}}"></image>
+        <view class="rightcontainer">
+          <view class="title">{{product.title}}</view>
+          <view class="protocal">{{product.productInfoObj.skuAlias}}</view>
+          <view class="money">¥{{product.productPrice}}</view>
+          <view class="count">×{{product.productCount}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="ordersum">
+      <text class="number">共计<text class="inner_number">{{orderDetail.productTotalCount}}</text>件</text>
+      <text class="money">小计：￥<text class="innner_money">{{orderDetail.realPayAmt}}</text>
+      </text>
+    </view>
+    <view class="orderstatus">
+      <view wx:if="{{orderDetail.orderStatus == 'PROCESSING'||orderDetail.orderStatus == 'SUCCESS'||orderDetail.orderStatus == 'FAIL'}}" data-orderno="{{orderDetail.orderNo}}" data-isorder="{{orderDetail.isOrder}}" bindtap="jumpToDetail" class="type">
+        <text>退款详情</text>
+      </view>
+      <view wx:else data-orderno="{{orderDetail.orderNo}}" bindtap="jumpToDetail" class="type">
+        <text>订单详情</text>
+      </view>
+    </view>
+  </view>
+</view>

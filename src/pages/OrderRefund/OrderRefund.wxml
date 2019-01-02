@@ -1,0 +1,42 @@
+<view class="mod">
+  <view class="hd">选择退款商品</view>
+  <view class="bd">
+    <radio-group bindchange="onProductChange" id="productList-container">
+      <label class="radio_top" wx:key="productId" wx:for="{{productList}}">
+        <view class="product_left">
+        <radio value="{{item.productId}}" checked="{{item.checked}}"/>
+      </view>
+       <view class="goods">
+        <image class="goodssum_left" src="https://api.ffan.com/tfs/v1/files/{{item.picture}}"></image>
+        <view class="rightcontainer">
+          <view class="title">{{item.title}}</view>
+          <view class="protocal">{{item.productInfoObj.skuAlias}}</view>
+          <view class="money">¥{{item.productPrice}}</view>
+          <view class="count">×{{item.productCount}}</view>
+        </view>
+     </view>
+
+      </label>
+    </radio-group>
+  </view>
+  <view class="ft">
+    退款金额： ¥
+    <text class="sum">{{selectedProductList[0]['realPayAmt']}}</text>
+  </view>
+</view>
+<view class="mod">
+  <view class="hd">退款理由
+    <text class="small">必选</text>
+  </view>
+  <view class="bd">
+    <radio-group class="radio-group" id="reason-container" bindchange="onReasonChange">
+      <label class="radio" wx:key="code" wx:for="{{reasonMessages}}">
+        <radio value="{{item.message}}" checked="{{item.checked}}"/>
+        {{item.message}}
+      </label>
+    </radio-group>
+  </view>
+</view>
+<view>
+  <button id="submit-btn" bindtap="onSubmit" disabled="{{!submitStatus}}">提交</button>
+</view>

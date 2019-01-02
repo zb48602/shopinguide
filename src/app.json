@@ -1,0 +1,16 @@
+{
+  "pages": [
+    
+    "pages/orderlist/orderlist",
+    "pages/orderdetail/orderdetail",
+    "pages/login/login",
+    "pages/searchorder/searchorder",
+    "pages/OrderRefund/OrderRefund"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FC6B1E",
+    "navigationBarTitleText": "鲸选shop in",
+    "navigationBarTextStyle": "white"
+  }
+}
